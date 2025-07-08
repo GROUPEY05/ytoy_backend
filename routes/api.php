@@ -48,7 +48,9 @@ Route::get('/search/produits', [ProduitController::class, 'search']);
 Route::get('/api/user', function () {
     return request()->user();
 })->middleware('auth:sanctum');
-
+Route::get('/ping', function () {
+    return response()->json(['status' => 'OK']);
+});
 
 // Routes publiques
 Route::post('/register', [AuthController::class, 'register']);
