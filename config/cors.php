@@ -2,20 +2,23 @@
 
 return [
 
-    'paths' => ['*'], // Autoriser tous les chemins
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => ['*'], // Autorise toutes les méthodes (GET, POST, etc.)
+    'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'], // Origines autorisées 'http://localhost:5173', 'http://127.0.0.1:5173'
+    'allowed_origins' => [
+        'http://localhost:5173', // Frontend local (Vite)
+        'https://ytoy-marketplace-gyh5-two.vercel.app', // Frontend en production (Vercel)
+    ],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'], // Autorise tous les en-têtes
+    'allowed_headers' => ['*'],
 
     'exposed_headers' => [],
 
     'max_age' => 0,
 
-    'supports_credentials' =>  true, // Mettez à true si vous utilisez des cookies ou des sessions
+    'supports_credentials' => true,
 
 ];
